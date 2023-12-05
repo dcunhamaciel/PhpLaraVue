@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Models\User;
 
 /*
@@ -44,4 +45,27 @@ Route::prefix('usuarios')->group(function() {
     Route::get('/{id}/tags', function() {
         return 'tags do usuário';
     })->name('usuarios.tags');
+});
+
+Route::get('/request', function(Request $request) {
+    $params = $request->all();
+    //dd($params);
+
+    $header = $request->header();
+    //dd($header);
+
+    $path = $request->path();
+    //dd($path);
+
+    $method = $request->method();
+    //dd($method);
+
+    $ip = $request->ip();
+    //dd($ip);
+
+    if ($request->has('keyword')) {
+        dd('Alguma coisa...');
+    }
+
+    return 'request';
 });
