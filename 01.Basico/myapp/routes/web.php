@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
 use App\Models\User;
 
 /*
@@ -15,11 +16,13 @@ use App\Models\User;
 |
 */
 
-Route::get('user/{user}', function(User $user) {
+Route::get('user/{user}', [UserController::class, 'show']);
+
+/*Route::get('user/{user}', function(User $user) {
     return $user;
 });
 
-/*Route::get('user/{user:email}', function(User $user) {
+Route::get('user/{user:email}', function(User $user) {
     return $user;
 });*/
 
