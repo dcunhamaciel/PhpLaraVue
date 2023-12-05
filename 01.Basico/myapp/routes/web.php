@@ -16,15 +16,20 @@ use App\Models\User;
 |
 */
 
-Route::get('user/{user}', [UserController::class, 'show']);
+Route::get('/', function() {
+    return view('welcome');
+})->name('home');
 
-/*Route::get('user/{user}', function(User $user) {
+Route::get('user/{user}', [UserController::class, 'show'])->name('user.show');
+
+/*
+Route::get('user/{user}', function(User $user) {
     return $user;
 });
 
 Route::get('user/{user:email}', function(User $user) {
     return $user;
-});*/
+});
 
 Route::get('/users/{paramA}/{paramB}', function ($paramA, $paramB) {
     return $paramA . ' - ' . $paramB;
@@ -72,3 +77,4 @@ Route::get('/request', function(Request $request) {
 
     return 'request';
 });
+*/
