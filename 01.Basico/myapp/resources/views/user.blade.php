@@ -1,39 +1,53 @@
-<h1>User</h1>
+@extends('layouts.default')
 
-{{ $user->name }} <br>
-{{ $user->email }} <br>
+@section('title', 'User Title')
 
-<br>
-{{ date('d/m/y') }}
+@section('sidebar')
+    <div>
+        <nav>
+            Sidebar de Usuário
+        </nav>
+    </div>
+@endsection
 
-@php
-    $total = 100;
-    $array = [];
-    $boolean = false;
-@endphp
+@section('content')
+    <h1>User</h1>
 
-<br><br>
-@empty($array)
-    O array está vazio jovem!
-@endempty
+    {{ $user->name }} <br>
+    {{ $user->email }} <br>
 
-<br><br>
-@if($total > 100)
-    Muito caro
-@elseif($total > 80)
-    tá ok
-@else
-    tá barato
-@endif
+    <br>
+    {{ date('d/m/y') }}
 
-<br><br>
-If =
-@if($boolean)
-    Falso
-@endif
+    @php
+        $total = 100;
+        $array = [];
+        $boolean = false;
+    @endphp
 
-<br><br>
-Unless =
-@unless($boolean)
-    Falso
-@endunless
+    <br><br>
+    @empty($array)
+        O array está vazio jovem!
+    @endempty
+
+    <br><br>
+    @if($total > 100)
+        Muito caro
+    @elseif($total > 80)
+        tá ok
+    @else
+        tá barato
+    @endif
+
+    <br><br>
+    If =
+    @if($boolean)
+        Falso
+    @endif
+
+    <br><br>
+    Unless =
+    @unless($boolean)
+        Falso
+    @endunless
+@endsection
