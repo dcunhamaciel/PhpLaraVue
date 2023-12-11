@@ -2,6 +2,10 @@
 
 @section('title', 'User Title')
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+@endpush
+
 @section('sidebar')
     <div>
         <nav>
@@ -50,4 +54,8 @@
     @unless($boolean)
         Falso
     @endunless
+
+    @push('scripts')
+        <script scr="{{ asset('js/user.js') }}"></script>
+    @endpush
 @endsection
