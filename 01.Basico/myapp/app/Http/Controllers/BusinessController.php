@@ -19,4 +19,15 @@ class BusinessController extends Controller
 
         dd($businesses, $business, $businessWhere, $businessWhereFirst);
     }
+
+    public function store()
+    {
+        $business = Business::create([
+            'name' => 'Jon Snow',
+            'email' => 'jon@snow.com',
+            'address' => 'Rua Jon by Snow',
+        ]);
+
+        dd($business);
+    }
 }

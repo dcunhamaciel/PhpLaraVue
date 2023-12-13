@@ -25,6 +25,7 @@ Route::get('users', [UserController::class, 'index'])->name('user.index');
 Route::get('user/{user}', [UserController::class, 'show'])->name('user.show');
 
 Route::get('businesses', [BusinessController::class, 'index'])->name('business.index');
+Route::post('businesses', [BusinessController::class, 'store'])->name('business.store');
 
 /*
 Route::get('user/{user}', function(User $user) {
