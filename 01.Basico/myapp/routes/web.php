@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BusinessController;
 use App\Models\User;
 
 /*
@@ -22,6 +23,8 @@ Route::get('/', function() {
 
 Route::get('users', [UserController::class, 'index'])->name('user.index');
 Route::get('user/{user}', [UserController::class, 'show'])->name('user.show');
+
+Route::get('businesses', [BusinessController::class, 'index'])->name('business.index');
 
 /*
 Route::get('user/{user}', function(User $user) {
