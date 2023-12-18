@@ -30,4 +30,14 @@ class BusinessController extends Controller
 
         dd($business);
     }
+
+    public function update(int $id)
+    {
+        $business = Business::find($id);
+        $business->name = 'Diego';
+        $business->email = 'diego@laravel.com';
+        $business->save();
+
+        dd($business);
+    }
 }
