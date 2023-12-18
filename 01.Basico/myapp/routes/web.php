@@ -26,7 +26,8 @@ Route::get('user/{user}', [UserController::class, 'show'])->name('user.show');
 
 Route::get('businesses', [BusinessController::class, 'index'])->name('business.index');
 Route::post('businesses', [BusinessController::class, 'store'])->name('business.store');
-Route::post('businesses/{id}', [BusinessController::class, 'store'])->name('business.update');
+Route::post('businesses/{id}', [BusinessController::class, 'update'])->name('business.update');
+Route::delete('businesses/{id}', [BusinessController::class, 'delete'])->name('business.delete');
 
 /*
 Route::get('user/{user}', function(User $user) {

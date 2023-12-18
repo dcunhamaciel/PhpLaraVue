@@ -40,4 +40,12 @@ class BusinessController extends Controller
 
         dd($business);
     }
+
+    public function delete(int $id)
+    {
+        $business = Business::find($id);
+        $business->delete();
+
+        dd($business);
+    }
 }
