@@ -11,24 +11,30 @@ class BusinessController extends Controller
     {
         $businesses = Business::all();
         
-        $business = Business::find(1);
+        //$business = Business::find(1);
         
-        $businessWhere = Business::where('name', 'Mueller PLC')->get();
+        //$businessWhere = Business::where('name', 'Mueller PLC')->get();
 
-        $businessWhereFirst = Business::where('name', 'Mueller PLC')->first();
+        //$businessWhereFirst = Business::where('name', 'Mueller PLC')->first();
 
-        dd($businesses, $business, $businessWhere, $businessWhereFirst);
+        //dd($businesses, $business, $businessWhere, $businessWhereFirst);
+
+        return view('businesses', [
+            'businesses' => $businesses
+        ]);
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $business = Business::create([
-            'name' => 'Jon Snow',
-            'email' => 'jon@snow.com',
-            'address' => 'Rua Jon by Snow',
+        $input = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'address' => 'string',
         ]);
 
-        dd($business);
+        $business = Business::create($input);
+
+        return redirect()->route('businesses.index');
     }
 
     public function update(int $id)

@@ -25,10 +25,10 @@ Route::get('/', function() {
 Route::get('users', [UserController::class, 'index'])->name('user.index');
 Route::get('users/{user}', [UserController::class, 'show'])->name('user.show');
 
-Route::get('businesses', [BusinessController::class, 'index'])->name('business.index');
-Route::post('businesses', [BusinessController::class, 'store'])->name('business.store');
-Route::post('businesses/{id}', [BusinessController::class, 'update'])->name('business.update');
-Route::delete('businesses/{id}', [BusinessController::class, 'delete'])->name('business.delete');
+Route::get('businesses', [BusinessController::class, 'index'])->name('businesses.index');
+Route::post('businesses', [BusinessController::class, 'store'])->name('businesses.store');
+Route::post('businesses/{business}', [BusinessController::class, 'update'])->name('businesses.update');
+Route::delete('businesses/{business}', [BusinessController::class, 'delete'])->name('businesses.delete');
 
 Route::get('posts', [PostController::class, 'index'])->name('post.index');
 Route::get('posts/{post}', [PostController::class, 'show'])->name('post.show');
