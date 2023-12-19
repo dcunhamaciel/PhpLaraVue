@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BusinessController;
+use App\Http\Controllers\PostController;
 use App\Models\User;
 
 /*
@@ -22,12 +23,15 @@ Route::get('/', function() {
 })->name('home');
 
 Route::get('users', [UserController::class, 'index'])->name('user.index');
-Route::get('user/{user}', [UserController::class, 'show'])->name('user.show');
+Route::get('users/{user}', [UserController::class, 'show'])->name('user.show');
 
 Route::get('businesses', [BusinessController::class, 'index'])->name('business.index');
 Route::post('businesses', [BusinessController::class, 'store'])->name('business.store');
 Route::post('businesses/{id}', [BusinessController::class, 'update'])->name('business.update');
 Route::delete('businesses/{id}', [BusinessController::class, 'delete'])->name('business.delete');
+
+Route::get('posts', [PostController::class, 'index'])->name('post.index');
+Route::get('posts/{post}', [PostController::class, 'show'])->name('post.show');
 
 /*
 Route::get('user/{user}', function(User $user) {
