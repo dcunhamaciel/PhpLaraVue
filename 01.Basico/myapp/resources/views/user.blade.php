@@ -19,6 +19,9 @@
 
     {{ $user->name }} <br>
     {{ $user->email }} <br>
+    
+    <h3>Posts do User</h3>
+    {{ $user->posts }} <br>
 
     <br>
     {{ date('d/m/y') }}
