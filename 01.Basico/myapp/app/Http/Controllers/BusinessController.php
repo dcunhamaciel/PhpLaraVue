@@ -30,7 +30,12 @@ class BusinessController extends Controller
             'name' => 'required|string',
             'email' => 'required|email',
             'address' => 'string',
+            'logo' => 'file',
         ]);
+
+        $file = $input['logo'];
+        $path = $file->store('logos');
+        $input['logo'] = $path;
 
         $business = Business::create($input);
 

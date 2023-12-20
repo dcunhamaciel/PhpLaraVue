@@ -14,7 +14,7 @@
         <br>
     @endif
 
-    <form action="{{ route('businesses.store') }}" method="POST">
+    <form action="{{ route('businesses.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="text" name="name" value="{{ old('name') }}">
         <br>
@@ -36,6 +36,9 @@
             {{ $message }}
             <br>
         @enderror
+        <br>
+
+        <input type="file" name="logo">
         <br>
 
         <button type="submit">Salvar</button>
