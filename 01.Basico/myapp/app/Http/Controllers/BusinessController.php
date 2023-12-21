@@ -9,7 +9,7 @@ class BusinessController extends Controller
 {
     public function index()
     {
-        $businesses = Business::all();
+        $businesses = Business::paginate();
         
         //$business = Business::find(1);
         

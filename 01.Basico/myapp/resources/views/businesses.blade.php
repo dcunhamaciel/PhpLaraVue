@@ -52,4 +52,6 @@
         {{ $business->name }} ({{ $business->email }})
         <br>
     @endforeach
+
+    {{ $businesses->links() }}
 @endsection

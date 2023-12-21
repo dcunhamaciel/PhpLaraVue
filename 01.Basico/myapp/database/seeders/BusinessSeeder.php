@@ -13,6 +13,6 @@ class BusinessSeeder extends Seeder
      */
     public function run(): void
     {
-        Business::factory(5)->create();
+        Business::factory(100)->create();
     }
 }
